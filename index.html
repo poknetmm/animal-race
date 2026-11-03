@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>우당탕 동물 운동회 V2 · 전신 달리기</title>
+<style>
+:root{font-family:'Malgun Gothic',system-ui,sans-serif;color:#25332f;background:#f5f3ea}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:12px 20px;font-weight:700;background:#e9ece4;color:#25332f}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ee9e33;outline-offset:3px}.primary{background:#226648;color:white}.shell{max-width:1400px;margin:auto;padding:26px 34px}header{display:flex;justify-content:space-between;align-items:center;gap:20px}.eyebrow{font-size:12px;letter-spacing:3px;font-weight:800;color:#56816b}h1{font-size:clamp(24px,3vw,40px);letter-spacing:-2px;margin:7px 0}p{line-height:1.6}.muted{color:#758078;font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap}.hero{display:flex;justify-content:space-between;align-items:center;background:#e4ecdf;border:1px solid #d3dfcc;border-radius:18px;padding:17px 24px;margin:22px 0 16px}.hero strong{font-size:21px}.hero p{margin:4px 0 0}.pill{background:#fff9dd;color:#786024;padding:8px 14px;border-radius:100px;font-size:13px;white-space:nowrap}.stadium{background:white;border:1px solid #dce1d7;border-radius:20px;padding:16px 20px;box-shadow:0 8px 30px #233c2610}.track-top{display:flex;justify-content:space-between;color:#738273;font-size:11px;letter-spacing:2px;margin:0 10px 9px 134px}.lane{display:flex;align-items:center;min-height:40px;height:calc((100vh - 365px)/12);max-height:58px;gap:12px}.label{width:112px;flex-shrink:0;display:flex;gap:9px;align-items:center;font-size:14px;font-weight:bold;overflow:hidden}.label span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.number{font:11px monospace;color:#8d978c}.road{position:relative;flex:1;height:100%;min-height:40px;background:#f0f4e9;border-bottom:2px solid white;overflow:hidden}.lane:nth-child(even) .road{background:#e9efdf}.road:before{content:'';position:absolute;inset:50% 0 auto;border-top:1px dashed #cbd7bd}.road:after{content:'';position:absolute;right:40px;top:0;bottom:0;width:12px;background:conic-gradient(#344f39 25%,#fff 0 50%,#344f39 0 75%,#fff 0) 0 0/12px 12px;opacity:.65}.runner{position:absolute;left:0;top:50%;width:40px;text-align:center;font-size:29px;line-height:36px;z-index:1;transform:translateY(-50%);will-change:left}.running .runner{animation:hop .23s infinite alternate}.lane:nth-child(3n) .runner{animation-delay:-.1s}@keyframes hop{to{transform:translateY(-60%) rotate(-7deg)}}.bottom{display:flex;align-items:center;justify-content:space-between;margin-top:16px;gap:15px}.status{font-weight:700;font-size:16px}.progress{height:4px;background:#e2e7dd;border-radius:10px;margin-top:14px;overflow:hidden}.progress i{display:block;width:0;height:100%;background:#eda44d}footer{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:12px;color:#7c857c}.history{margin-top:12px;color:#4f6a55;font-size:13px}dialog{border:0;border-radius:24px;padding:28px;max-width:530px;width:calc(100% - 32px);box-shadow:0 30px 100px #0003}dialog::backdrop{background:#14291c88;backdrop-filter:blur(5px)}dialog h2{margin:0 0 10px;font-size:24px}label{display:block;font-size:13px;font-weight:700;margin:17px 0 7px}textarea,input,select{width:100%;border:1px solid #ccd5c8;border-radius:10px;padding:11px;background:#fafbf7;color:#25332f}textarea{height:146px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.check{display:flex;gap:9px;align-items:center;font-weight:400}.check input{width:auto}.dialog-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:22px}.error{color:#b44332;font-size:13px;min-height:20px}.result{text-align:center;padding:38px 28px}.result .trophy{font-size:74px}.result h2{font-size:36px;color:#226648;margin:12px 0}.result p{color:#687968}.confetti{position:fixed;top:-20px;width:10px;height:16px;pointer-events:none;z-index:10;animation:fall 3s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(640deg)}}@media(max-width:650px){.shell{padding:18px 12px}header{align-items:flex-start}.actions button{padding:9px 11px;font-size:12px}.hero{padding:14px}.hero strong{font-size:17px}.pill{font-size:11px}.stadium{padding:12px 10px}.label{width:76px;font-size:12px;gap:5px}.track-top{margin-left:90px}.lane{gap:5px;height:40px}.bottom{align-items:flex-start}.bottom button{padding:12px 15px}.status{font-size:13px}footer{font-size:10px}h1{letter-spacing:-1px}}@media(prefers-reduced-motion:reduce){.running .runner{animation:none}.confetti{display:none}}
+
+/* Full-body runners: all artwork is embedded and works offline. */
+.lane{min-height:60px;height:60px;max-height:none}
+.road{min-height:60px}
+.runner{width:72px;height:60px;font-size:initial;line-height:normal}
+.runner svg{display:block;width:72px;height:60px;overflow:visible}
+.running .runner{animation:none}
+.runner .character{transform-origin:38px 35px}
+.runner .arm{transform-box:fill-box;transform-origin:50% 10%;transform:rotate(-12deg)}
+.runner .leg{transform-box:fill-box;transform-origin:50% 10%;transform:rotate(12deg)}
+.runner .back{transform:rotate(-20deg)}
+.runner .sweat,.runner .speed-line{opacity:0}
+.running .character{animation:body-bounce var(--stride,.3s) ease-in-out infinite alternate}
+.running .arm,.running .leg{animation:limb-swing var(--stride,.3s) ease-in-out infinite alternate}
+.running .back{animation-direction:alternate-reverse}
+.running .sweat{animation:sweat-fly .75s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.running .sweat.two{animation-delay:-.25s}
+.running .sweat.three{animation-delay:-.5s}
+.running .speed-line{animation:wind .5s ease-out infinite}
+.running .speed-line.second{animation-delay:-.25s}
+.sprinting .character,.sprinting .arm,.sprinting .leg{animation-duration:.13s}
+.sprinting .sweat{animation-duration:.45s}
+@keyframes body-bounce{from{transform:translateY(1px) rotate(5deg)}to{transform:translateY(-2px) rotate(9deg)}}
+@keyframes limb-swing{from{transform:rotate(-42deg)}to{transform:rotate(48deg)}}
+@keyframes sweat-fly{0%{opacity:0;transform:translate(0,0) scale(.5)}20%{opacity:1}80%{opacity:.8}100%{opacity:0;transform:translate(-15px,10px) scale(.7)}}
+@keyframes wind{from{opacity:.65;transform:translateX(5px)}to{opacity:0;transform:translateX(-8px)}}
+.result .winner-body{width:150px;height:125px;margin:10px auto}
+.result .winner-body svg{width:100%;height:100%}
+@media(prefers-reduced-motion:reduce){.running .character,.running .arm,.running .leg,.running .sweat,.running .speed-line{animation:none}.running .sweat{opacity:.8}}
+
+</style>
+</head>
+<body>
+<main class="shell">
+<header><div><div class="eyebrow">OFFICE FIELD DAY</div><h1>우당탕 동물 운동회 🏁 <span style="font-size:14px;letter-spacing:0;color:#226648;vertical-align:middle">V2 · 전신 + 땀방울</span></h1></div><div class="actions"><button id="fullscreen">⛶ 전체 화면</button><button id="settings">⚙ 행사 설정</button></div></header>
+<section class="hero"><div><strong id="prizeTitle">🎁 상품권 5만원</strong><p class="muted">우리 팀의 특별한 선물, 신나는 경주로 공개합니다.</p></div><span class="pill" id="count">12명 출전</span></section>
+<section class="stadium" aria-label="동물 경주장"><div class="track-top"><span>START</span><span>FINISH 🏁</span></div><div id="lanes"></div><div class="progress"><i id="progress"></i></div><div class="bottom"><div><div class="status" id="status" role="status">선수들이 출발선에서 기다리고 있어요.</div><div class="muted" id="hint">준비가 끝나면 경주를 시작하세요.</div></div><button class="primary" id="start">경주 시작 ▶</button></div></section>
+<div class="history" id="history"></div><footer><span>응원은 크게, 선물은 즐겁게!</span><span>진행자 지정 결과를 경주로 공개하는 이벤트입니다.</span></footer>
+</main>
+<dialog id="setup"><form id="setupForm"><h2>행사 준비 ⚙</h2><div class="muted">당첨자를 미리 지정하면 경주 마지막에 우승합니다.<br>설정을 마친 후 행사 화면을 공유해 주세요.</div><label for="names">참가자 이름 · 한 줄에 한 명 (2~24명)</label><textarea id="names" spellcheck="false"></textarea><div class="row"><div><label for="winner">이번 라운드 당첨자</label><select id="winner"></select></div><div><label for="duration">경주 시간</label><select id="duration"><option value="15">15초 · 빠르게</option><option value="25" selected>25초 · 추천</option><option value="40">40초 · 여유롭게</option></select></div></div><label for="prize">상품 이름</label><input id="prize" maxlength="60" value="상품권 5만원" required><label class="check"><input type="checkbox" id="exclude" checked> 다음 라운드에서 이전 당첨자 제외</label><div class="muted">설정과 당첨 기록은 이 창이 열려 있는 동안만 유지됩니다.</div><div id="error" class="error" role="alert"></div><div class="dialog-actions"><button type="button" id="reset">당첨 기록 초기화</button><button type="button" id="cancel">닫기</button><button class="primary" type="submit">설정 완료</button></div></form></dialog>
+<dialog class="result" id="result"><div class="eyebrow">TODAY’S WINNER</div><div class="trophy" id="winnerAnimal">🏆</div><h2 id="winnerName"></h2><p id="winnerPrize"></p><strong>축하합니다! 🎉</strong><div class="dialog-actions" style="justify-content:center"><button class="primary" id="next">다음 라운드 준비</button></div></dialog>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const animals=['🐰','🐱','🐶','🐻','🐼','🦊','🐯','🐨','🐷','🐸','🐹','🦁','🐵','🐮','🐧','🦄','🐺','🐥','🦉','🦖','🦝','🐢','🐿️','🦔'];
+let config={names:Array.from({length:12},(_,i)=>`직원 ${i+1}`),winner:'직원 1',duration:25,prize:'상품권 5만원',exclude:true};
+let awards=[],racers=[],busy=false,needsSetup=false;
+const readNames=()=>$('names').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+const eligible=(names,exclude)=>names.filter(n=>!exclude||!awards.some(a=>a.name===n));
+function fillWinners(preferred){const names=eligible(readNames(),$('exclude').checked);$('winner').replaceChildren();names.forEach(name=>{const opt=document.createElement('option');opt.value=name;opt.textContent=name;$('winner').append(opt)});if(names.includes(preferred))$('winner').value=preferred;}
+function openSetup(){if(busy)return;$('names').value=config.names.join('\n');$('duration').value=config.duration;$('prize').value=config.prize;$('exclude').checked=config.exclude;$('error').textContent='';fillWinners(config.winner);$('setup').showModal()}
+
+function runnerArt(animal,index){
+const fur=['#e8d6c6','#e4b577','#b9906a','#a97c59','#525e63','#e7974f','#e9ac43','#a7b2ba','#eca9ad','#91b66b','#d8b081','#c99a58'][index%12];
+const shirt=['#dd6559','#588bbb','#d5a63b','#678f6a','#9780b6','#4f9c9a'][index%6];
+return `<svg viewBox="0 0 72 64" aria-hidden="true" focusable="false">
+<ellipse cx="38" cy="59" rx="19" ry="3" fill="#314b32" opacity=".14"/>
+<g class="speed-line" stroke="#9baea0" stroke-width="2" stroke-linecap="round"><path d="M4 36h10M8 42h9"/></g>
+<path class="speed-line second" d="M4 48h12" stroke="#9baea0" stroke-width="2" stroke-linecap="round"/>
+<g class="character">
+<path d="M29 42q-16 5-12-6" fill="none" stroke="${fur}" stroke-width="6" stroke-linecap="round"/>
+<g class="leg back"><path d="M34 44v9l-6 4" stroke="${fur}" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M25 57h8" stroke="#f7faf2" stroke-width="5" stroke-linecap="round"/></g>
+<g class="arm back"><path d="M30 32l-7 7 5 5" stroke="${fur}" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+<ellipse cx="37" cy="37" rx="11" ry="13" fill="${shirt}" stroke="#25332f" stroke-opacity=".18"/>
+<path d="M28 45q9 5 18 0v4H28z" fill="#344b58"/>
+<rect x="32" y="33" width="11" height="9" rx="2" fill="#fff9e7"/>
+<text x="37.5" y="40" text-anchor="middle" font-size="7" font-family="Arial,sans-serif" font-weight="bold" fill="#405444">${index+1}</text>
+<g class="leg"><path d="M40 46v8l6 3" stroke="${fur}" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M43 58h9" stroke="#f7faf2" stroke-width="5" stroke-linecap="round"/></g>
+<g class="arm"><path d="M45 32l6 8 6-5" stroke="${fur}" stroke-width="5" stroke-linecap="round" fill="none"/></g>
+<text x="38" y="29" text-anchor="middle" font-size="29" font-family="Segoe UI Emoji,Apple Color Emoji,sans-serif">${animal}</text>
+</g>
+<g fill="#5ebee8" stroke="#e4faff" stroke-width=".7"><path class="sweat" d="M23 10q-7 5-4 8t6-1q1-3-2-7Z"/><path class="sweat two" d="M19 20q-6 5-3 7t5-1q1-3-2-6Z"/><path class="sweat three" d="M53 9q-3 7 0 8t4-2q0-3-4-6Z"/></g>
+</svg>`;
+}
+
+function render(){const names=eligible(config.names,config.exclude);$('lanes').replaceChildren();racers=names.map(name=>{const lane=document.createElement('div');lane.className='lane';const label=document.createElement('div');label.className='label';const num=document.createElement('span');num.className='number';num.textContent=String(config.names.indexOf(name)+1).padStart(2,'0');const text=document.createElement('span');text.textContent=name;label.title=name;label.append(num,text);const road=document.createElement('div');road.className='road';const runner=document.createElement('div');runner.className='runner';const animal=animals[config.names.indexOf(name)%animals.length];runner.innerHTML=runnerArt(animal,config.names.indexOf(name));runner.style.setProperty('--stride',(.22+Math.random()*.12)+'s');road.append(runner);lane.append(label,road);$('lanes').append(lane);return {name,animal,runner,phase:Math.random()*6.28,speed:.8+Math.random()*.2}});$('count').textContent=`${names.length}명 출전`;$('prizeTitle').textContent='🎁 '+config.prize;$('progress').style.width='0%';$('start').disabled=names.length===0;$('start').textContent=needsSetup?'다음 라운드 설정':'경주 시작 ▶';$('status').textContent=names.length?'선수들이 출발선에서 기다리고 있어요.':'모든 참가자가 선물을 받았어요!';$('hint').textContent=names.length?'준비가 끝나면 경주를 시작하세요.':'행사 설정에서 당첨 기록을 초기화할 수 있습니다.';$('history').textContent=awards.length?'🏆 당첨 기록  ·  '+awards.map(a=>`${a.name} (${a.prize})`).join('  /  '):'';}
+function position(t,r,isWinner){const middle=t+Math.sin(t*Math.PI)*(Math.sin(t*9+r.phase)*.11+(r.speed-.9)*.35);const blend=Math.max(0,(t-.78)/.22);const target=isWinner?t:.78+(t-.78)*.45;return Math.max(0,Math.min(isWinner?1:.94,middle*(1-blend)+target*blend));}
+function start(){if(busy)return;if(needsSetup){openSetup();return}if(!racers.some(r=>r.name===config.winner)){openSetup();return}busy=true;$('start').disabled=true;$('settings').disabled=true;const began=performance.now();const countdown=3000;let last=-1;function frame(now){const elapsed=now-began;if(elapsed<countdown){const n=3-Math.floor(elapsed/1000);if(n!==last){$('status').textContent=`출발 ${n}초 전…`;last=n}$('hint').textContent='내 동물을 찾아 응원해 주세요!';requestAnimationFrame(frame);return}$('lanes').classList.add('running');const t=Math.min(1,(elapsed-countdown)/(config.duration*1000));$('lanes').classList.toggle('sprinting',t>.8);let leader=null;let best=-1;racers.forEach(r=>{const p=position(t,r,r.name===config.winner);r.runner.style.left=`calc(${p*100}% - ${p*92}px)`;if(p>best){best=p;leader=r}});$('progress').style.width=t*100+'%';$('status').textContent=t<.15?'출발! 힘차게 달려갑니다!':t>.8?'마지막 스퍼트! 결승선이 눈앞이에요!':`${leader.name} 선수가 앞서고 있어요!`;$('hint').textContent=`결승선까지 ${Math.ceil((1-t)*config.duration)}초`;if(t<1)requestAnimationFrame(frame);else finish()}requestAnimationFrame(frame)}
+function finish(){busy=false;needsSetup=true;$('lanes').classList.remove('running','sprinting');$('settings').disabled=false;$('start').disabled=false;$('start').textContent='다음 라운드 설정';const w=racers.find(r=>r.name===config.winner);awards.push({name:w.name,prize:config.prize});$('status').textContent=`🏆 ${w.name} 선수 우승!`;$('hint').textContent='함께 축하해 주세요!';$('winnerAnimal').classList.add('winner-body');$('winnerAnimal').innerHTML=runnerArt(w.animal,config.names.indexOf(w.name));$('winnerName').textContent=w.name+' 님';$('winnerPrize').textContent=config.prize+' 당첨!';$('result').showModal();$('history').textContent='🏆 당첨 기록  ·  '+awards.map(a=>`${a.name} (${a.prize})`).join('  /  ');for(let i=0;i<65;i++){const c=document.createElement('i');c.className='confetti';c.style.left=Math.random()*100+'vw';c.style.background=['#e9ac49','#4f8a65','#e58b90','#8da9db'][i%4];c.style.animationDelay=Math.random()*.7+'s';$('result').append(c);setTimeout(()=>c.remove(),4000)}}
+$('settings').onclick=openSetup;$('start').onclick=start;$('cancel').onclick=()=>$('setup').close();$('names').oninput=()=>fillWinners($('winner').value);$('exclude').onchange=()=>fillWinners($('winner').value);$('next').onclick=()=>{$('result').close();openSetup()};$('reset').onclick=()=>{if(!awards.length)return;if(confirm('당첨 기록을 모두 초기화할까요?')){awards=[];fillWinners(config.winner);render()}};
+$('setupForm').onsubmit=e=>{e.preventDefault();const names=readNames();let error='';if(names.length<2||names.length>24)error='참가자는 2명 이상, 24명 이하로 입력해 주세요.';else if(names.some(n=>n.length>20))error='이름은 20자 이하로 입력해 주세요.';else if(new Set(names).size!==names.length)error='같은 이름은 부서나 번호로 구분해 주세요.';else if(!$('winner').value)error='선택할 당첨자가 없습니다. 당첨 기록을 초기화해 주세요.';else if(!$('prize').value.trim())error='상품 이름을 입력해 주세요.';if(error){$('error').textContent=error;return}config={names,winner:$('winner').value,duration:Number($('duration').value),prize:$('prize').value.trim(),exclude:$('exclude').checked};needsSetup=false;render();$('setup').close()};
+$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen()}catch{$('hint').textContent='브라우저의 F11 키로 전체 화면을 사용할 수 있습니다.'}};
+document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'⛶ 전체 화면 종료':'⛶ 전체 화면'});
+render();openSetup();
+</script>
+</body></html>
